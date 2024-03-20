@@ -2,7 +2,13 @@ import java.util.*;
 
 public class Practice {
     public static void main(String[] args) {
-        System.out.println(Integer.parseInt("2#".substring(0,1)));
-//        "abx".c
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(1);
+        set.add(2);
+
+        for(Integer e: set) {
+            System.out.println(e);
+        }
     }
 }
