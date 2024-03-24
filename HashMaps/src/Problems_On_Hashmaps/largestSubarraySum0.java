@@ -4,7 +4,7 @@ import java.util.*;
 
 public class largestSubarraySum0 {
     public static void main(String[] args) {
-        System.out.println(betterApproach(new int[]{15, -2, 2, -8, 1, 7, 10, -25}));
+        System.out.println(brute(new int[]{15, -2, 2, -8, 1, 7, 10, -25}));
     }
 
     static int practice(int[] arr) {
@@ -43,6 +43,22 @@ public class largestSubarraySum0 {
             }
             else {
                 map.put(prefixSum, i);
+            }
+        }
+
+        return maxLen;
+    }
+
+//    TC: O(N^N)        SC: O(1)
+    static int brute(int[] nums) {
+        int maxLen = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            int sum = nums[i];
+            for (int j = i+1; j < nums.length; j++) {
+                sum += nums[j];
+
+                if(sum == 0) maxLen = Math.max(maxLen, j-i+1);
             }
         }
 

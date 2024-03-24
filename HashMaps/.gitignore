@@ -28,5 +28,6 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-HashMaps.iml/
-.idea/
+/.idea/
+/out/
+/HashMaps.iml

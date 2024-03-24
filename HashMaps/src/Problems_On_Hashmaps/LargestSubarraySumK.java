@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class LargestSubarraySumK {
     public static void main(String[] args) {
-        int[] nums = {2,0,0,3};
-        int target = 2;
+        int[] nums = {1, 2, 3, 1, 1, 1, 1};
+        int target = 3;
 
         System.out.println(longestSubarrayWithSumK(nums, target));
     }
@@ -52,14 +52,7 @@ public class LargestSubarraySumK {
                 if(j == nums.length) break;
                 sum += nums[j];
             }
-
-            else if(sum > k) {
-                sum -= nums[i];
-                i++;
-            }
-        }
-        if(j == nums.length) {
-            while(sum >= k) {
+            else {
                 sum -= nums[i];
                 i++;
             }
